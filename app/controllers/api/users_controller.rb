@@ -26,7 +26,7 @@ class Api::UsersController < ApplicationController
 
     if @user.valid_password?(params[:user][:current_password])
       pp = profile_params
-      binding.pry
+      #binding.pry
       if @user.update(pp)
          render json: { message: 'Profile updated successfully', user: @user }, status: :ok
       else
