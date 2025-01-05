@@ -18,14 +18,14 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: user_ira
-  password: Ira0711
-  host: localhost
+  username: <%= ENV.fetch("DB_USERNAME", "default_username") %>
+  password: <%= ENV.fetch("DB_PASSWORD", "default_password") %>
+  host: <%= ENV.fetch("DB_HOST", "localhost") %>
 
 
 development:
   <<: *default
-  database: shop_test_development
+  database: <%= ENV.fetch("DB_NAME_DEV", "shop_test_development") %>
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
@@ -59,7 +59,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: shop_test_test
+  database: <%= ENV.fetch("DB_NAME_TEST", "shop_test_test") %>
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -84,18 +84,20 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    database: shop_test_production
-    username: shop_test
-    password: <%= ENV["SHOP_TEST_DATABASE_PASSWORD"] %>
+    database: <%= ENV["DB_NAME_PROD"] %>
+    username: <%= ENV["DB_USERNAME_PROD"] %>
+    password: <%= ENV["DB_PASSWORD_PROD"] %>
+    host: <%= ENV["DB_HOST_PROD"] %>
+    port: <%= ENV["DB_PORT_PROD"] || 5432 %>
   cache:
     <<: *primary_production
-    database: shop_test_production_cache
+    database: <%= ENV["DB_NAME_PROD_CACHE"] || "#{ENV["DB_NAME_PROD"]}_cache" %>
     migrations_paths: db/cache_migrate
   queue:
     <<: *primary_production
-    database: shop_test_production_queue
+    database: <%= ENV["DB_NAME_PROD_QUEUE"] || "#{ENV["DB_NAME_PROD"]}_queue" %>
     migrations_paths: db/queue_migrate
   cable:
     <<: *primary_production
-    database: shop_test_production_cable
+    database: <%= ENV["DB_NAME_PROD_CABLE"] || "#{ENV["DB_NAME_PROD"]}_cable" %>
     migrations_paths: db/cable_migrate
