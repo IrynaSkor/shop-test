@@ -1,0 +1,70 @@
+div.badding{
+padding-left: 3rem;
+padding-right: 3rem;
+}
+
+div.profile{
+    margin-right: 10rem;
+    margin-left: 10rem;
+    margin-top: 2rem;
+}
+
+div.badding h1{
+    text-align: center;
+    }
+    
+    .width25{
+        width: 25%;
+    }
+
+.width100{
+    width: 100%;
+}
+
+.width10{
+    width: 10%;
+}
+
+.short50{
+    display: inline !important;
+    width: 50vw !important;
+}
+
+div.margin20{
+    margin-top: 20vh;
+}
+
+div.bunner{
+width: 100%;
+background-color: darkslateblue;
+color: white;
+padding-left: 3rem;
+padding-right: 3rem;
+padding-top: 1rem;
+padding-bottom: 1rem;
+}
+
+a.white{
+    --bs-link-underline-opacity: 0;
+    color: white !important;
+    text-decoration-color: white !important;
+    text-decoration: none;
+    }
+
+    table td.right,table th.right{
+        text-align: right;
+    }
+    
+    table td.left,table th.left{
+        text-align: left;
+    }
+    
+    table td.center,table th.center{
+        text-align: center;
+    }
+
+.color_red{
+    color: rgb(209, 60, 60);
+}
+    
+    

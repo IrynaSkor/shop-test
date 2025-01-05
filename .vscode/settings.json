@@ -1,0 +1,15 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "DBlocal",
+            "database": "shop_test_development",
+            "username": "user_ira",
+            "password": "Ira0711",
+            "connectionTimeout": 60
+        }
+    ]
+}

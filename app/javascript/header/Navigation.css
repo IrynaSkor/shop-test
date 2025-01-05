@@ -1,0 +1,7 @@
+.nav-underline{
+    --bs-nav-underline-gap: 3rem;
+}
+
+.nav {
+    padding-left: 3rem;
+}
