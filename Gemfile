@@ -20,10 +20,10 @@ gem "jbuilder"
 gem "devise"
 gem 'react-rails'
 gem 'jsbundling-rails'
-gem "pry"
-gem 'pry-byebug'
-gem 'dotenv-rails', groups: [:development, :test]
-
+#gem "pry"
+#gem 'pry-byebug'
+#gem 'dotenv-rails', groups: [:development, :test]
+gem 'dotenv-rails', '~> 3.0'
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
