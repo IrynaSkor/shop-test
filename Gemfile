@@ -22,7 +22,7 @@ gem 'react-rails'
 gem 'jsbundling-rails'
 gem "pry"
 gem 'pry-byebug'
-gem 'dotenv-rails', groups: [:development, :test, :production]
+gem 'dotenv-rails', groups: [:development, :test]
 
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
